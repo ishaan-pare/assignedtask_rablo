@@ -1,0 +1,46 @@
+.st1t {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    font-weight: 100;
+
+}
+.st1t-tl {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+.st1t-tr {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+.st1t label {
+    margin-bottom: 10px;
+}
+.st1t-tl input {
+    height: 30px;
+}
+.st1t-tr input {
+    height: 30px;
+
+}
+
+.st1m {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    font-weight: 100;
+}
+.st1m input {
+    height: 30px;
+
+}
+.st1m label {
+    margin-bottom: 10px;
+
+}
+
