@@ -1,0 +1,161 @@
+.rprofile {
+    margin: auto;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.rprofile-down {
+    display: flex;
+    width: 100%;
+    margin: auto;
+}
+.rprofile-down-left {
+    width: 50%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px;
+    background-color: white;
+    
+
+}
+.bottom {
+    width: 35%;
+    margin: auto;
+    overflow: hidden;
+}
+.bottom button {
+    float: right;
+    margin-right: 50px;
+    margin-top: 20px;
+    border: none;
+    height: 30px;
+    width: 70px;
+    box-shadow: 0px 0px 3px;
+    cursor: pointer;
+}
+.rprofile-down-right {
+    width: 65%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px;
+    background-color: white;
+
+}
+.rprofile-left-img {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.rprofile-left-img img{
+    height: 120px;
+    width: 120px;
+    box-shadow: 0px 0px 3px;
+    border-radius: 20px;
+}
+.rprofile-left-rname {
+    padding: 10px;
+    width: 80%;
+    margin: auto;
+}
+.rprofile-left-rcon {
+    padding: 10px;
+    width: 80%;
+    margin: auto;
+}
+.rprofile-left-remail {
+    padding: 10px;
+    width: 80%;
+    margin: auto;
+}
+.rprofile-left-rpin {
+    padding: 10px;
+    width: 80%;
+    margin: auto;
+}
+.rprofile-left-raddr {
+    padding: 10px;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.rprofile-right-img {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.rprofile-right-img img{
+    height: 120px;
+    width: 120px;
+    box-shadow: 0px 0px 3px;
+    border-radius: 20px;
+   
+}
+
+.rprofile-right-img input[type=file]::file-selector-button {
+    margin-right: 20px;
+    margin-left: 10px;
+    margin-top: 80px;
+    border: none;
+    background: #00ADB5;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+}
+.rprofile-right-img input[type=file]::file-selector-button:hover {
+    background: #02939a;
+}
+.rprofile-right-rname {
+    padding: 5px;
+    padding-left: 70px;
+    width: 80%;
+    margin: auto;
+
+}
+
+
+.styled-table {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: 80%;
+    margin: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+}
+.styled-table thead tr {
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+    .rprofile-down-left {
+        width: 100%;
+        margin-left: 15px;
+    }
+    .bottom {
+        width: 100%;
+        margin: auto;
+        
+    }
+}

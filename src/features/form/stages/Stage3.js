@@ -2,65 +2,53 @@ import React from "react";
 
 import "../css/stage3.css";
 import { useDispatch, useSelector } from "react-redux";
-import { setLanglikes } from "../formSlice";
+import { setCPP, setGo, setJava, setLanglikes, setPython } from "../formSlice";
 function Stage3() {
     const formData = useSelector(state => state.form.value.formData);
     const dispatch = useDispatch();
-    var arr = ["", "", "", ""];
 
     const handleOnchange = (e) => {
         let ab = document.getElementsByName(e.target.name)[0].checked;
-        if (e.target.name === "Python") {
-            console.log(ab);
-            if (ab) {
-                arr[0] = "Python";
-                dispatch(setLanglikes(arr));
 
+        if (e.target.name === "Python") {
+            if (ab) {
+                dispatch(setPython(true));
             }
             else {
-                arr[0] = "";
-                dispatch(setLanglikes(arr));
-
+                dispatch(setPython(false));
+            
+                
             }
-
-
         }
         if (e.target.name === "CPP") {
-            if (formData.langlikes[1].length === 0) {
-                arr[1] = "CPP";
-                dispatch(setLanglikes(arr));
-
+            if (ab) {
+                dispatch(setCPP(true));
             }
             else {
-                arr[1] = "";
-                dispatch(setLanglikes(arr));
-
-
+                dispatch(setCPP(false));
+            
+                
             }
         }
         if (e.target.name === "Java") {
-            if (formData.langlikes[2].length === 0) {
-                arr[2] = "Java";
-                dispatch(setLanglikes(arr));
+            if (ab) {
+                dispatch(setJava(true));
 
             }
             else {
-                arr[2] = "";
-                dispatch(setLanglikes(arr));
+                dispatch(setJava(true));
 
 
             }
         }
         if (e.target.name === "Go") {
-            if (formData.langlikes[3].length === 0) {
-                arr[3] = "Go";
-                dispatch(setLanglikes(arr));
+            if (ab) {
+                dispatch(setGo(true));
 
             }
             else {
-                arr[3] = "";
-                dispatch(setLanglikes(arr));
 
+                dispatch(setGo(true));
 
             }
         }
@@ -77,13 +65,13 @@ function Stage3() {
                     <input type="checkbox" name="Python" onChange={handleOnchange} />
                     <label for="Python">Python</label>
                     <br />
-                    <input type="checkbox" name="CPP" />
+                    <input type="checkbox" name="CPP" onChange={handleOnchange}/>
                     <label for="CPP">C++</label>
                     <br />
-                    <input type="checkbox" name="Java" />
+                    <input type="checkbox" name="Java" onChange={handleOnchange}/>
                     <label for="Java">Java</label>
                     <br />
-                    <input type="checkbox" name="Go" />
+                    <input type="checkbox" name="Go" onChange={handleOnchange}/>
                     <label for="Go">Go</label>
                 </div>
             </div>

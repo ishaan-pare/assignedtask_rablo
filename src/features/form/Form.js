@@ -8,12 +8,19 @@ import Stage3 from "./stages/Stage3";
 import Stage4 from "./stages/Stage4";
 import { setProgress } from "./formSlice";
 
+import { useNavigate } from "react-router-dom";
+
 function Form() {
     const progress = useSelector(state => state.form.value.progress);
+    const formData = useSelector(state => state.form.value.formData);
+    const conditions = useSelector(state => state.form.value.conditions);
     const dispatch = useDispatch();
 
-    useEffect(()=>{
-        if (progress==1) {
+    const navigate = useNavigate();
+
+
+    useEffect(() => {
+        if (progress == 1) {
             document.getElementById("circle1").style.border = "2px solid blue";
             document.getElementById("circle2").style.border = "1px solid red";
             document.getElementById("circle3").style.border = "1px solid red";
@@ -39,6 +46,44 @@ function Form() {
             document.getElementById("circle1").style.border = "1px solid red";
         }
     }, [progress]);
+
+    const onSubmit = () => {
+        navigate("/details");
+    }
+    const onNext = (e) => {
+        if (progress === 1) {
+            if (formData.profilePic.length <= 0) {
+                alert("Please upload your file");
+            }
+            else {
+                dispatch(setProgress(progress + 1));
+
+            }
+        }
+        if (progress === 2) {
+            if (formData.fname.length <= 0 || formData.password.length <= 0 || formData.lname.length <= 0 || formData.email.length <= 0) {
+                alert("Please your details");
+            }
+            else {
+                dispatch(setProgress(progress + 1));
+
+            }
+        }
+        if (progress == 3) {
+            dispatch(setProgress(progress + 1));
+
+        }
+        if (progress == 4) {
+            if (conditions.terms || conditions.feed) {
+                dispatch(setProgress(progress + 1));
+
+            }
+            else {
+                
+            }
+        }
+    }
+
     return (
         <div className="container">
             <div className="menu">
@@ -83,17 +128,21 @@ function Form() {
                     }
                 </div>
                 <div className="controls">
+                    <div className="msg">
+
+                    </div>
                     {
                         (progress < 4) ?
-                            <button onClick={() => dispatch(setProgress(progress+1))}>Next</button>
-                            : <button disabled={true}>Next</button>
+                            <button onClick={onNext}>Next</button>
+                            : <button onClick={onSubmit}>Submit</button>
                     }
                     {
                         (progress > 1) ?
 
-                            <button onClick={() => dispatch(setProgress(progress-1))}>Prev</button>
+                            <button onClick={() => dispatch(setProgress(progress - 1))}>Prev</button>
                             : <button disabled={true}>Prev</button>
                     }
+
                 </div>
             </div>
         </div>

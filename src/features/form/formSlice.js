@@ -12,9 +12,18 @@ export const formSlice = createSlice({
                 email: "",
                 password: "",
                 age: "",
-                langlikes: ["","","",""],
                 termsAccepted: false,
                 mailAccepted: false
+            },
+            langlikes: {
+                Python: false,
+                CPP: false,
+                Java: false,
+                Go: false
+            },
+            conditions: {
+                terms: false,
+                feed: false
             }
         }
     },
@@ -28,6 +37,18 @@ export const formSlice = createSlice({
         setLname: (state, action)=>{
             state.value.formData.lname = action.payload
         },
+        setPython: (state, action)=>{ 
+            state.value.langlikes.Python = action.payload
+        },
+        setJava: (state, action)=>{ 
+            state.value.langlikes.Java = action.payload
+        },
+        setCPP: (state, action)=>{ 
+            state.value.langlikes.CPP = action.payload
+        },
+        setGo: (state, action)=>{ 
+            state.value.langlikes.Go = action.payload
+        },
         setEmail: (state, action)=>{
             state.value.formData.email = action.payload
         },
@@ -36,6 +57,12 @@ export const formSlice = createSlice({
         },
         setAge: (state, action)=>{
             state.value.formData.age = action.payload
+        },
+        setTerm: (state, action)=> {
+            state.value.conditions.terms = action.payload
+        },
+        setFeed: (state, action)=> {
+            state.value.conditions.feed = action.payload
         },
         setLanglikes: (state, action)=>{
             state.value.formData.langlikes = action.payload
@@ -52,5 +79,5 @@ export const formSlice = createSlice({
     }
 });
 
-export const {setProgress, setAge, setEmail, setFname, setLanglikes, setLname,setMailAccepted,setPassword,setProfilePic,setTermAccepted} = formSlice.actions;
+export const {setProgress, setAge, setEmail,setFeed, setTerm, setFname, setPython,setGo,setJava,setCPP ,setLname,setMailAccepted,setPassword,setProfilePic,setTermAccepted} = formSlice.actions;
 export default formSlice.reducer;

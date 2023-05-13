@@ -1,6 +1,6 @@
 .st1t {
     display: flex;
-    width: 80%;
+    width: 100%;
     margin: auto;
     font-weight: 100;
 
@@ -31,7 +31,7 @@
 .st1m {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     margin: auto;
     font-weight: 100;
 }
@@ -43,4 +43,5 @@
     margin-bottom: 10px;
 
 }
+
 
