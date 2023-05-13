@@ -45,3 +45,15 @@
 }
 
 
+@media screen and (min-width: 800px) {
+    .st1t {
+        width: 70%;
+
+    }
+    .st1m {
+        width: 70%;
+    }
+
+}
+
+

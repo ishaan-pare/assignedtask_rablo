@@ -79,7 +79,7 @@ function Form() {
 
             }
             else {
-                
+
             }
         }
     }
@@ -91,7 +91,7 @@ function Form() {
                     Roblo.in
                 </div>
                 <div className="menu-right">
-                    Github
+                    <button onClick={()=>window.location.href = "https://github.com/ishaan-pare/assignedtask_rablo.git"}>Github</button>
                 </div>
             </div>
             <div className="form">
